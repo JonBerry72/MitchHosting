@@ -84,64 +84,55 @@
       backdrop-filter: blur(4px);
     }
 
-    .eyebrow {
-      display: inline-block;
-      margin-bottom: 14px;
-      padding: 8px 12px;
-      border: 1px solid rgba(102,230,255,0.22);
-      border-radius: 999px;
-      color: var(--cyan);
-      letter-spacing: 0.14em;
-      font-size: 12px;
-      font-weight: 700;
-      text-transform: uppercase;
-      background: rgba(102,230,255,0.08);
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
     }
 
-    h1 {
-      margin: 0 0 14px;
-      font-size: clamp(34px, 5vw, 62px);
-      line-height: 0.95;
-      letter-spacing: -0.03em;
+    .social-tile {
+      display: block;
+      text-decoration: none;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(102,230,255,0.2);
+      background: rgba(255,255,255,0.02);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3), 0 0 24px rgba(102,230,255,0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
     }
 
-    p {
-      margin: 0;
-      max-width: 760px;
+    .social-tile:hover {
+      transform: translateY(-4px);
+      border-color: rgba(102,230,255,0.45);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.38), 0 0 30px rgba(102,230,255,0.16);
+    }
+
+    .social-tile img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      background: rgba(0,0,0,0.2);
+    }
+
+    .social-label {
+      padding: 14px 16px;
       color: var(--white-soft);
-      font-size: clamp(16px, 2vw, 20px);
-      line-height: 1.7;
-    }
-
-    .glow-line {
-      width: 160px;
-      height: 2px;
-      margin: 24px 0 26px;
-      background: linear-gradient(90deg, rgba(102,230,255,0.95), rgba(102,230,255,0.1));
-      box-shadow: 0 0 18px rgba(102,230,255,0.55);
-    }
-
-    .status {
-      margin-top: 28px;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: rgba(225,245,255,0.9);
       font-size: 14px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
+      text-align: center;
+      background: linear-gradient(180deg, rgba(10,20,30,0.65), rgba(5,10,16,0.85));
     }
 
-    .dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--cyan);
-      box-shadow: 0 0 0 6px rgba(102,230,255,0.12), 0 0 18px rgba(102,230,255,0.65);
+    @media (max-width: 900px) {
+      .social-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 700px) {
       .wrap { padding: 28px 16px 56px; }
+      .panel { padding: 20px; border-radius: 14px; }
+    }
       .panel { padding: 24px; border-radius: 14px; }
       p { line-height: 1.6; }
     }
@@ -152,15 +143,21 @@
 
   <main class="wrap">
     <section class="panel">
-      <div class="eyebrow">Holding Page</div>
-      <h1>Website Coming Soon</h1>
-      <div class="glow-line"></div>
-      <p>
-        A new site is being prepared.
-      </p>
-      <div class="status">
-        <span class="dot"></span>
-        In progress
+      <div class="social-grid">
+        <a class="social-tile" href="https://soundcloud.com/mberrysound" target="_blank" rel="noopener noreferrer">
+          <img src="images/soundcloud-tile.png" alt="SoundCloud" />
+          <div class="social-label">SoundCloud</div>
+        </a>
+
+        <a class="social-tile" href="https://www.instagram.com/mberry.sound?utm_source=ig_web_button_share_sheet&amp;igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">
+          <img src="images/instagram-tile.png" alt="Instagram" />
+          <div class="social-label">Instagram</div>
+        </a>
+
+        <a class="social-tile" href="https://www.facebook.com/mitchell.bezz" target="_blank" rel="noopener noreferrer">
+          <img src="images/facebook-tile.png" alt="Facebook" />
+          <div class="social-label">Facebook</div>
+        </a>
       </div>
     </section>
   </main>
