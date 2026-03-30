@@ -140,6 +140,43 @@
       text-transform: uppercase;
     }
 
+    .about-box {
+      max-width: 820px;
+    }
+
+    .about-text {
+      margin: 0;
+      color: var(--white-soft);
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .video-panel {
+      max-width: 520px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .gig-video {
+      display: block;
+      width: 100%;
+      max-width: 360px;
+      margin: 0 auto;
+      border-radius: 18px;
+      border: 1px solid rgba(102,230,255,0.2);
+      background: rgba(0,0,0,0.35);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3), 0 0 24px rgba(102,230,255,0.08);
+      overflow: hidden;
+    }
+
+    .video-note {
+      margin: 14px 0 0;
+      color: var(--white-soft);
+      font-size: 13px;
+      line-height: 1.6;
+      opacity: 0.8;
+    }
+
     .soundcloud-list {
       display: grid;
       gap: 20px;
@@ -199,12 +236,12 @@
           <div class="social-label">Facebook</div>
         </a>
 
-                <a class="social-tile" href="https://open.spotify.com/artist/0kYnY8KNmkKuUQorGdbDGI?si=Tmny7cNOTr-qQFtLX9PUfw" target="_blank" rel="noopener noreferrer">
+        <a class="social-tile" href="https://open.spotify.com/artist/0kYnY8KNmkKuUQorGdbDGI?si=Tmny7cNOTr-qQFtLX9PUfw" target="_blank" rel="noopener noreferrer">
           <img src="images/spotifytile.jpg" alt="Spotify" />
           <div class="social-label">Spotify</div>
         </a>
 
-                <a class="social-tile" href="https://music.apple.com/gb/artist/mitchell-berry/1726971349" target="_blank" rel="noopener noreferrer">
+        <a class="social-tile" href="https://music.apple.com/gb/artist/mitchell-berry/1726971349" target="_blank" rel="noopener noreferrer">
           <img src="images/apple2.jpg" alt="Apple Music" />
           <div class="social-label">Apple Music</div>
         </a>
@@ -212,6 +249,18 @@
     </section>
 
     <div class="section-spacer"></div>
+
+    <section class="panel video-panel">
+      <h2 class="section-title">Latest Gig Video</h2>
+      <video class="gig-video" autoplay loop muted playsinline preload="auto">
+        <source src="images/latestGig.wmv" type="video/x-ms-wmv">
+        Your browser does not support WMV playback.
+      </video>
+      <p class="video-note">
+        This video is loaded from the images folder as <strong>latestGig.wmv</strong>.
+      </p>
+    </section>
+
     <div class="section-spacer"></div>
 
     <section class="panel about-box">
@@ -224,6 +273,9 @@ With releases on Elixyr, Sonic Flux, and Trash Tunes, Mitchell’s sound fuses m
 From tearing up venues like Ministry of Sound, Engine Rooms, and Platform 11 to making his international breakthrough in Croatia, his momentum shows no sign of slowing. Every performance is pure velocity — dark, driving, and built to move bodies.
       </p>
     </section>
+
+    <div class="section-spacer"></div>
+
     <section class="panel">
       <h2 class="section-title">Latest on SoundCloud</h2>
       <div class="soundcloud-list">
